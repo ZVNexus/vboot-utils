@@ -1,0 +1,71 @@
+<PISI>
+    <Source>
+        <Name>vboot-utils</Name>
+        <Packager>
+            <Name>Alexander Koskovich</Name>
+            <Email>zvnexus@outlook.com</Email>
+        </Packager>
+        <License>custom:chromiumos</License>
+        <PartOf>programming.library</PartOf>
+        <Summary xml:lang="en">Google&apos;s Verified Boot reference implementation (versions 1.x &amp; 2.x) and helper tools.</Summary>
+        <Description xml:lang="en">Google&apos;s Verified Boot reference implementation (versions 1.x &amp; 2.x) and helper tools.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>vboot-utils</Name>
+        <Summary xml:lang="en">Google&apos;s Verified Boot reference implementation (versions 1.x &amp; 2.x) and helper tools.</Summary>
+        <Description xml:lang="en">Google&apos;s Verified Boot reference implementation (versions 1.x &amp; 2.x) and helper tools.
+</Description>
+        <PartOf>programming.library</PartOf>
+        <Files>
+            <Path fileType="config">/etc/default/vboot_reference</Path>
+            <Path fileType="executable">/usr/bin/cgpt</Path>
+            <Path fileType="executable">/usr/bin/chromeos-tpm-recovery</Path>
+            <Path fileType="executable">/usr/bin/crossystem</Path>
+            <Path fileType="executable">/usr/bin/dev_debug_vboot</Path>
+            <Path fileType="executable">/usr/bin/dumpRSAPublicKey</Path>
+            <Path fileType="executable">/usr/bin/dump_fmap</Path>
+            <Path fileType="executable">/usr/bin/dump_kernel_config</Path>
+            <Path fileType="executable">/usr/bin/enable_dev_usb_boot</Path>
+            <Path fileType="executable">/usr/bin/futility</Path>
+            <Path fileType="executable">/usr/bin/gbb_utility</Path>
+            <Path fileType="executable">/usr/bin/tpm-nvsize</Path>
+            <Path fileType="executable">/usr/bin/tpmc</Path>
+            <Path fileType="executable">/usr/bin/vbutil_firmware</Path>
+            <Path fileType="executable">/usr/bin/vbutil_kernel</Path>
+            <Path fileType="executable">/usr/bin/vbutil_key</Path>
+            <Path fileType="executable">/usr/bin/vbutil_keyblock</Path>
+            <Path fileType="data">/usr/share/licenses/vboot-utils/LICENSE</Path>
+            <Path fileType="data">/usr/share/vboot/bin/common_minimal.sh</Path>
+            <Path fileType="data">/usr/share/vboot/bin/gbb_flags_common.sh</Path>
+            <Path fileType="data">/usr/share/vboot/bin/get_gbb_flags.sh</Path>
+            <Path fileType="data">/usr/share/vboot/bin/make_dev_firmware.sh</Path>
+            <Path fileType="data">/usr/share/vboot/bin/make_dev_ssd.sh</Path>
+            <Path fileType="data">/usr/share/vboot/bin/resign_firmwarefd.sh</Path>
+            <Path fileType="data">/usr/share/vboot/bin/set_gbb_flags.sh</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>vboot-utils-devel</Name>
+        <Summary xml:lang="en">Development files for vboot-utils</Summary>
+        <Description xml:lang="en">Google&apos;s Verified Boot reference implementation (versions 1.x &amp; 2.x) and helper tools.
+</Description>
+        <PartOf>programming.devel</PartOf>
+        <RuntimeDependencies>
+            <Dependency release="1">vboot-utils</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="data">/usr/lib/pkgconfig/vboot_host.pc</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2020-02-03</Date>
+            <Version>80.12739</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Alexander Koskovich</Name>
+            <Email>zvnexus@outlook.com</Email>
+        </Update>
+    </History>
+</PISI>

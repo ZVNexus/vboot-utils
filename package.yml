@@ -1,0 +1,22 @@
+name       : vboot-utils
+version    : 80.12739
+release    : 1
+source     :
+    - git|https://chromium.googlesource.com/chromiumos/platform/vboot_reference : 236bd46bfb59f0262dcb1771a108ebb5e90df578
+license    : custom:chromiumos
+component  : programming.library
+summary    : Google's Verified Boot reference implementation (versions 1.x & 2.x) and helper tools.
+description: |
+    Google's Verified Boot reference implementation (versions 1.x & 2.x) and helper tools.
+builddeps  :
+    - pyyaml
+    - trousers
+rundeps  :
+    - openssl
+setup      : |
+    %patch -p1 < $pkgfiles/no-fuzzer.patch
+build      : |
+    %make
+install    : |
+    install -Dm644 LICENSE "$installdir"/usr/share/licenses/$package/LICENSE
+    %make_install MINIMAL=1
